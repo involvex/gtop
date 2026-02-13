@@ -6,4 +6,4 @@
 
 #### Description
 
-*A description of the issue*
+_A description of the issue_

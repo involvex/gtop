@@ -1,12 +1,10 @@
-GTOP
-=====
+# GTOP
 
 > gtop - System monitoring dashboard for terminal
 
 ## SYNOPSIS
 
 `gtop`
-
 
 ## DESCRIPTION
 
@@ -20,20 +18,17 @@ The following commands are supported while in gtop:
 - `c` sort the process table by CPU usage
 - `m` sort the process table by Memory usage
 
-
 ## Website
 
-https://github.com/aksakalli/gtop
+https://github.com/involvex/gtop
 
 ## BUGS
 
-Please report any bugs to https://github.com/aksakalli/gtop.
-
+Please report any bugs to https://github.com/involvex/gtop.
 
 ## LICENSE
 
-Copyright (c) 2017, Can Güney Aksakalli (MIT License).
-
+Copyright (c) 2026, Involvex (MIT License).
 
 ## SEE ALSO
 

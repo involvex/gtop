@@ -4,16 +4,16 @@
 
 System monitoring dashboard for terminal.
 
-  [![NPM Version](https://img.shields.io/npm/v/gtop.svg)](https://npmjs.org/package/gtop)
-  [![NPM Downloads](https://img.shields.io/npm/dm/gtop.svg)](https://npmjs.org/package/gtop)
-  [![Snap Status](https://snapcraft.io/gtop/badge.svg)](https://snapcraft.io/gtop)
-  [![Docker Pulls](https://img.shields.io/docker/pulls/aksakalli/gtop)](https://hub.docker.com/r/aksakalli/gtop)
-  [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/aksakalli/gtop)](https://hub.docker.com/r/aksakalli/gtop/builds)
+[![NPM Version](https://img.shields.io/npm/v/gtop.svg)](https://npmjs.org/package/gtop)
+[![NPM Downloads](https://img.shields.io/npm/dm/gtop.svg)](https://npmjs.org/package/gtop)
+[![Snap Status](https://snapcraft.io/gtop/badge.svg)](https://snapcraft.io/gtop)
+[![Docker Pulls](https://img.shields.io/docker/pulls/aksakalli/gtop)](https://hub.docker.com/r/aksakalli/gtop)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/aksakalli/gtop)](https://hub.docker.com/r/aksakalli/gtop/builds)
 
 ### Requirements
 
-* Linux / OSX / Windows (partial support)
-* Node.js >= v8
+- Linux / OSX / Windows (partial support)
+- Node.js >= v8
 
 ### Installation
 
@@ -45,9 +45,9 @@ To stop gtop use `q`, or `ctrl+c` in most shell environments.
 
 You can sort the process table by pressing
 
-* `p`: Process Id
-* `c`: CPU usage
-* `m`: Memory usage
+- `p`: Process Id
+- `c`: CPU usage
+- `m`: Memory usage
 
 ### Troubleshooting
 

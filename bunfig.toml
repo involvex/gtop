@@ -1,0 +1,78 @@
+# bunfig.toml - Bun configuration file
+# https://bun.sh/docs/runtime/bunfig
+
+[install]
+# Save exact versions instead of semver ranges
+# exact = true
+
+# Set default registry
+# registry = "https://registry.npmjs.org/"
+
+# Set node_modules folder
+# node_modules = "node_modules"
+
+# Cache directory
+cache = "node_modules/.bun-cache"
+
+[test]
+# Test runner configuration
+# Coverage reporting
+# coverage = true
+
+# Run tests in parallel
+# parallel = true
+
+# Watch mode
+# watch = true
+
+[dev]
+# Development server configuration
+# Port for dev server
+# port = 3000
+
+# Host for dev server
+# host = "localhost"
+
+# Auto-reload on file changes
+# hot = true
+
+[build]
+# Build output directory
+outdir = "dist"
+entrypoints = ["./index.js"]
+preload = ["src/gtop.js"]
+import = ["src/gtop.js"]
+require = ["src/gtop.js","src/utils.js","src/monitor/index.js"]
+Includes = ["src/*/**", "node_modules/**"]
+packages = "auto"
+# Minification
+# minify = true
+
+# Source maps
+sourcemap = "true"
+
+# Target environment
+target = "node"
+
+[package]
+# Package.json field order
+fields = ["name", "version", "description"]
+
+[run]
+# Node.js compatibility mode
+compat = "node"
+
+# Loader configuration for file types
+loader = {
+  ".css" = "css",
+  ".js" = "js",
+  ".ts" = "tsx",
+  ".tsx" = "tsx",
+  ".json" = "json",
+  ".txt" = "text"
+}
+
+# Environment variables
+# env = {
+#   NODE_ENV = "production"
+# }
