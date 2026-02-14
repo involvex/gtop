@@ -33,21 +33,23 @@ npm test
 ## Architecture
 
 ### Entry Point
+
 - `index.js` → `lib/gtop.js` (main application)
 
 ### Monitor Pattern (`lib/monitor/`)
 
 Each system metric has its own module following a consistent pattern:
 
-| Module | Widget Type | Update Interval |
-|--------|-------------|----------------|
-| `cpu.js` | Line chart | 1 second |
-| `mem.js` | Line chart + 2 donuts | 2 seconds |
-| `net.js` | Sparkline | 1 second |
-| `disk.js` | Donut | 5 seconds |
-| `proc.js` | Table | 3 seconds |
+| Module    | Widget Type           | Update Interval |
+| --------- | --------------------- | --------------- |
+| `cpu.js`  | Line chart            | 1 second        |
+| `mem.js`  | Line chart + 2 donuts | 2 seconds       |
+| `net.js`  | Sparkline             | 1 second        |
+| `disk.js` | Donut                 | 5 seconds       |
+| `proc.js` | Table                 | 3 seconds       |
 
 **Monitor Constructor Pattern:**
+
 ```javascript
 function Metric(widget) {
   this.widget = widget;
@@ -63,7 +65,7 @@ function Metric(widget) {
   }, intervalMs);
 }
 
-Metric.prototype.updateData = function(data) {
+Metric.prototype.updateData = function (data) {
   // Process data
   this.widget.setData(processedData);
   this.widget.screen.render();
@@ -71,6 +73,7 @@ Metric.prototype.updateData = function(data) {
 ```
 
 ### Shared Utilities
+
 - `lib/utils.js` - `humanFileSize()`, `colors` array for charts
 - `lib/monitor/index.js` - Exports all monitor constructors
 
@@ -78,23 +81,26 @@ Metric.prototype.updateData = function(data) {
 
 The UI uses an 11 rows × 12 cols blessed grid:
 
-| Widget | Position |
-|--------|----------|
-| CPU History | rows 0-3, cols 0-11 |
-| Memory/Swap History | rows 4-7, cols 0-7 |
-| Memory donut | rows 4-5, cols 8-11 |
-| Swap donut | rows 6-7, cols 8-11 |
-| Network sparkline | rows 8-9, cols 0-5 |
-| Disk donut | rows 10-11, cols 0-5 |
-| Process table | rows 8-11, cols 6-11 |
+| Widget              | Position             |
+| ------------------- | -------------------- |
+| CPU History         | rows 0-3, cols 0-11  |
+| Memory/Swap History | rows 4-7, cols 0-7   |
+| Memory donut        | rows 4-5, cols 8-11  |
+| Swap donut          | rows 6-7, cols 8-11  |
+| Network sparkline   | rows 8-9, cols 0-5   |
+| Disk donut          | rows 10-11, cols 0-5 |
+| Process table       | rows 8-11, cols 6-11 |
 
 ### Process Table Features
+
 - **Sorting**: `p` (PID), `c` (CPU), `m` (Memory), `n` (Name)
 - **Search**: `/` enters search mode, `Esc` exits
 - **Kill**: `k` kills selected process (uses `fkill` module)
 
 ### Terminal Size Handling
+
 The `getValidTerminalSize()` function in `gtop.js` ensures drawille-compatible dimensions:
+
 - Width must be even (width % 2 == 0)
 - Height must be multiple of 4 (height % 4 == 0)
 - Windows fallback uses PowerShell to get terminal size
