@@ -2,6 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(bun:*)"
+    ],
+    "additionalDirectories": [
+      "D:\\repos\\gtop\\"
     ]
-  }
+  },
+  "prefersReducedMotion": true
 }
